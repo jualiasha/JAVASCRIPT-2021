@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Practice</title>
+    <link rel="stylesheet" href="/lesson4-gazoline calculator/style.css" />
+  </head>
+  <body>
+    <h1>Gazoline Price</h1>
+    <h2>How much gasoline you get?</h2>
+    <p>Make a program that asks...</p>
+    <h3>Solution</h3>
+    <form action="">
+      <div>
+        <label for="price">Price</label>
+        <input type="text" id="price" />
+      </div>
+      <div>
+        <label for="money">Money</label>
+        <input type="text" id="money" />
+      </div>
+    </form>
+    <button onclick="calculate2()">Calculate</button>
+    <p>You can buy: <span id="answer"></span> liters of gasoline</p>
+    <p id="solution"></p>
+    <hr />
+    <h2>Task 1. Age of the user</h2>
+    <form action="">
+      <div>
+        <label for="age">What is your Age?</label>
+        <input type="text" id="age" />
+      </div>
+    </form>
+    <button onclick="agecalculator()">and what?</button>
+    <p id="agemessage"></p>
+    <hr />
+    <h2>Task 2 Three numbers</h2>
+    <form action="">
+      <div>
+        <label for="number1">Put here any number 1</label>
+        <input type="text" id="number1" />
+      </div>
+      <div>
+        <label for="number2">Put here any number 2</label>
+        <input type="text" id="number2" />
+      </div>
+      <div>
+        <label for="number3">Put here any number 3</label>
+        <input type="text" id="number3" />
+      </div>
+    </form>
+    <button onclick="threenumbers()">calculate numbers</button>
+    <p id="calculation2"></p>
+    <hr />
+    <h2>Task 3 One number %2</h2>
+    <form action="">
+      <div>
+        <label for="t3_number1">Put here any number 1</label>
+        <input type="text" id="t3_number1" />
+      </div>
+    </form>
+    <button onclick="onenumber()">calculate numbers</button>
+    <p id="onenumber"></p>
+    <hr />
+    <h2>Task 4 Body Index</h2>
+    <div>
+        <label for="height">Put here your height</label>
+        <input type="text" id="height" />
+      </div>
+      <div>
+        <label for="weight">Put here your weight</label>
+        <input type="text" id="weight" />
+      </div>
+      
+    </form>
+    <button onclick="bmi()">calculate index</button>
+    <p id="bmi"></p>
+    <hr>
+    <h2>Task 5 Hourly salery</h2>
+    <div>
+        <label for="h_salary">Put here your hourly salary</label>
+        <input type="text" id="h_salary" />
+      </div>
+      <div>
+        <label for="hours">How many hours did you work per day?</label>
+        <input type="text" id="hours" />
+      </div>
+      
+    </form>
+    <button onclick="d_salary()">calculate salary</button>
+    <p id="d_salary"></p>
+
+    <script src="/lesson4-gazoline calculator/script.js"></script>
+    <script src="/lesson4-gazoline calculator/tasks.js"></script>
+  </body>
+</html>

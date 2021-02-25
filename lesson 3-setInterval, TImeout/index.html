@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Practice</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <h1>Arcada</h1>
+
+    <div id="bulbs"></div>
+    <div id="light-bulbs"></div>
+    <label for="amountofbulbs">Change amount of bulbs you want<br /> </label>
+    <input
+      type="range"
+      name="amountofbulbs"
+      id="amountofbulbs"
+      min="30"
+      max="100"
+      value="40"
+      step="10"
+      onchange="changebublenumber()"
+    />
+
+    <button onclick="stopthebulb()">Stop</button>
+    <button onclick="history.go(0);">Start new game</button>
+    <p id="winningtext"></p>
+
+    <script src="/script.js"></script>
+    <!-- <script src="/lesson 3-setInterval, TImeout/skeleton.js"></script> -->
+    <!-- <script src="/lesson 3-setInterval, TImeout/arrangeitems.js"></script> -->
+  </body>
+</html>

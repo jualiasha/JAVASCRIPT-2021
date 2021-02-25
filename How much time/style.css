@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #faf4f8;
+  font-size: 19px;
+  color: #4b007a;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  line-height: 1.3;
+}
+
+input,
+button {
+  font-family: "Lato", sans-serif;
+  border-radius: 1.5rem;
+  border: 1px solid #ffafccda;
+  font-weight: 400;
+  color: #4b007a;
+}
+
+h1,
+h2 {
+  color: #7b4997;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+h2 {
+  color: rgb(87, 85, 85);
+}
+
+h3 {
+  color: #c5449c;
+}
+
+button {
+  background-color: #ffc8dd;
+  padding: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #f09ebd;
+}
+
+.blur {
+  background: radial-gradient(
+    37.58% 88.32% at 46.17% 5.43%,
+    #c5449c 0%,
+    rgba(231, 30, 238, 0.856) 100%
+  );
+  filter: blur(100px);
+  width: 20rem;
+  height: 5rem;
+  border-radius: 50px;
+  z-index: 1;
+}
+.blur1 {
+  background: radial-gradient(
+    37.58% 88.32% at 46.17% 5.43%,
+    #c5449c 0%,
+    #ffafcc 100%
+  );
+  filter: blur(100px);
+  width: 20rem;
+  height: 5rem;
+  border-radius: 50px;
+  z-index: 1;
+  display: inline-block;
+  text-align: right;
+}
+
+input {
+  padding: 0.2rem 0.2rem;
+  margin-top: 0.8rem;
+}
+
+/*Header*/
+
+header h1 span {
+  color: rgb(87, 85, 85);
+}
+
+/*Main*/
+/* section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: row wrap;
+  margin: 0 0 4rem 0;
+} */
+section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 100px minmax(250px, auto);
+  column-gap: 1rem;
+}
+section h2 {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+section .timer {
+  grid-column: 3/4;
+  grid-row: 1/3;
+  justify-self: center;
+  margin-top: 55px;
+  padding: 45px;
+}
+main {
+  max-width: 1440px;
+  padding: 2rem;
+  z-index: 2;
+}
+
+section img {
+  margin: -150px 0 0 30px;
+}
+
+/*Countdown*/
+#demo2 {
+  font-size: 20px;
+  color: #c5449c;
+  font-weight: 400;
+  margin-top: 50px;
+}
+
+.timer {
+  background-image: url("/Timer.svg");
+  background-repeat: no-repeat;
+  display: none;
+}
+
+/*Footer*/
+footer {
+  padding: 1rem;
+  font-weight: 400;
+  text-align: right;
+}
+
+/*Media*/
+@media (max-width: 450px) {
+  h1 {
+    font-size: 1.5em;
+  }
+  h2 {
+    font-size: 1.1em;
+  }
+  section {
+    display: flex;
+    flex-flow: column wrap;
+  }
+
+  section .timer {
+    margin-top: 15px;
+    padding: 0 0 170px 0px;
+  }
+
+  #demo2 {
+    margin-top: 95px;
+    margin-left: 45px;
+  }
+
+  button {
+    margin-bottom: 1rem;
+  }
+  section img {
+    margin: 0px 0 0px 80px;
+    height: 200px;
+  }
+}

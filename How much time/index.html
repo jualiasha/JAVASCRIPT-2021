@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>How much time left?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="blur"></div>
+      <h1>How much time you should wait for..<span>event?</span></h1>
+    </header>
+    <main>
+      <section>
+        <h2>You can count from today:</h2>
+        <form id="form">
+          <div>
+            <label for="enddate">Which date you are waiting for?</label>
+            <input type="date" name="enddate" id="enddate" />
+          </div>
+          <div>
+            <label for="userevent">What is the name of this event?</label>
+            <input type="text" name="userevent" id="userevent" required />
+          </div>
+          <button id="calculatedays" onclick="CalculateDays()">
+            Calculate days until your event
+          </button>
+        </form>
+        <div id="result"></div>
+        <div class="timer"><div id="demo2"></div></div>
+      </section>
+
+      <section>
+        <h2>You can count from any other date</h2>
+        <div><img src="/hand-watch.png" alt="hand" /></div>
+        <form id="form2">
+          <div>
+            <label for="startdate">Start counting from the date </label>
+            <input type="date" name="startdate" id="startdate" />
+          </div>
+          <div>
+            <label for="enddate2">Which date you are waiting for?</label>
+            <input type="date" name="enddate2" id="enddate2" />
+          </div>
+          <div>
+            <label for="userevent2">What is the name of this event?</label>
+            <input type="text" name="userevent2" id="userevent2" required />
+          </div>
+          <button id="calculatedays2" onclick="CalculateDays2()">
+            Calculate days until your event
+          </button>
+        </form>
+        <div id="result2"></div>
+      </section>
+    </main>
+    <footer>
+      <div class="blur1"></div>
+      made by Julia Matviishyna 2021
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

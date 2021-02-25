@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Car-Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Car-Calculator</h1>
+    <form action="">
+      <div>
+        <label for="plate">Licence plate</label>
+        <input type="number" name="" id="plate" placeholder="111" />
+      </div>
+      <div>
+        <label for="producer">Car Maker</label>
+        <input type="text" id="producer" placeholder="Jul" />
+      </div>
+      <div>
+        <label for="model">Car Model</label>
+        <input type="text" id="model" placeholder="Mercedes" />
+      </div>
+      <div>
+        <label for="price">Price</label>
+        <input type="number" name="" id="price" placeholder="100000" />
+      </div>
+      <div>
+        <label for="color">Color</label>
+        <input type="color" name="color" id="color" value="#ffffff" />
+      </div>
+
+      <div>
+        <input type="submit" value="Create new car" onclick="car(event)" />
+      </div>
+    </form>
+
+    <label for="search">Search by plate</label>
+    <input type="text" name="search" id="search" />
+
+    <button onclick="searchtheplate()">Search</button>
+    <p id="text"></p>
+    <p id="txt"></p>
+
+    <script src="/calculator/script.js"></script>
+  </body>
+</html>

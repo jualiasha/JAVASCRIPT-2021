@@ -1,0 +1,34 @@
+body {
+  background-image: linear-gradient(to right, #e47a69, #a0387f);
+  height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #fff;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+h2 {
+  margin: 50px 50px;
+
+  border-bottom: 1px dashed rgba(253, 251, 249, 0.11);
+}
+div {
+  margin-bottom: 10px;
+}
+h1 {
+  border-bottom: 1px dashed rgba(253, 251, 249, 0.11);
+  padding-bottom: 20px;
+}
+main {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+input[type="submit"] {
+  background-color: #333333;
+  color: #fff;
+  padding: 10px;
+
+  border: none;
+}
