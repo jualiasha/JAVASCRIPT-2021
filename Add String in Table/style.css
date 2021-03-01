@@ -12,3 +12,8 @@ th {
 td {
   border: 1px solid rgb(90, 93, 94);
 }
+button {
+  margin-left: 10px;
+  background-color: rgb(65, 133, 133);
+  color: white;
+}
