@@ -7,7 +7,7 @@
  */
 
 let today = new Date();
-let input;
+let input, countdowntimer;
 let enddate;
 let arrayGap = [];
 let arrayDays = [];
@@ -96,38 +96,35 @@ const CalculateDays = () => {
   }
 
   result.innerHTML = `<h3>You need to wait for ${userevent.value}: </h3>  Calendar days: ${Calresult} <br>  Week-ends free days: ${CalBusiness} <br> Finnish Business Days: ${CalHolBusiness} <br> <h3>Be patient! Good luck!</h3>  `;
+  form.reset();
+  arrayGap = [];
+  TimerFunction();
+};
 
-  /*Countdown*/
-  // Set the date we're counting down to
+/*Countdown*/
+const TimerFunction = () => {
+  if (countdowntimer) {
+    clearInterval(countdowntimer);
+  }
+
   var countDownDate2 = enddate.getTime();
-
-  // Update the count down every 1 second
-  var x2 = setInterval(function () {
-    // Get today's date and time
+  countdowntimer = setInterval(function () {
     var now2 = new Date().getTime();
 
-    // Find the distance between now and the count down date
     var distance2 = countDownDate2 - now2;
 
-    // Time calculations for days, hours, minutes and seconds
     var days2 = Math.floor(distance2 / (1000 * 60 * 60 * 24));
     var hours2 =
       Math.floor((distance2 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) - 2;
     var minutes2 = Math.floor((distance2 % (1000 * 60 * 60)) / (1000 * 60));
     var seconds2 = Math.floor((distance2 % (1000 * 60)) / 1000);
 
-    // Display the result in the element with id="demo"
     document.querySelector(".timer").style.display = "block";
     document.getElementById("demo2").innerHTML =
       days2 + "d " + hours2 + "h " + minutes2 + "m " + seconds2 + "s ";
-
-    // If the count down is finished, write some text
-    if (distance2 < 0) {
-      clearInterval(x);
-      document.getElementById("demo2").innerHTML = "TIMES IS UP!!";
-    }
   }, 1000);
 };
+
 form.addEventListener("submit", Stoprefresh, CalculateDays);
 
 /**
