@@ -1,13 +1,10 @@
 var pokemons = [];
 var pokemon = {};
 var img = [];
-let popup = document.getElementById("popup");
+
 let url;
 
 async function GetPokemons() {
-  /* fetch("https://pokeapi.co/api/v2/pokemon?offset=0&limit=1000")
-    .then((resp) => resp.json())
-    .then((json) => {}); */
   let resp = await fetch(
     "https://pokeapi.co/api/v2/pokemon?offset=0&limit=1000"
   );
@@ -16,26 +13,26 @@ async function GetPokemons() {
   console.log(pokemons);
 
   for (let i = 0; i < pokemons.length; i++) {
-    pokemon = {
-      name: pokemons[i].name,
-      url: pokemons[i].url,
-    };
-    //console.log(pokemon.index);
-    let div = document.createElement("div");
-    div.className = "wow";
+    let li = document.createElement("li");
     document
       .querySelector("#pokemons")
-      .appendChild(div).innerHTML = `${pokemon.name}`;
+      .appendChild(
+        li
+      ).innerHTML = `${pokemons[i].name}<div class="popup"></div>`;
+    li.addEventListener("click", GetLink);
 
-    div.addEventListener("click", GetImage);
-  }
-
-  async function GetImage() {
-    let resp = await fetch(pokemon.url);
-    let json = await resp.json();
-    img = json.sprites.front_default;
-    console.log(img);
+    function GetLink() {
+      console.log(pokemons[i]);
+      fetch(pokemons[i].url)
+        .then((response) => response.json())
+        .then((json) => {
+          img = json.sprites.front_default;
+          console.log(img);
+          let popup = document.querySelector(".popup");
+          popup.style.display = "block";
+          popup.innerHTML = `<img src="${img}">`;
+        });
+    }
   }
 }
-
 GetPokemons();
