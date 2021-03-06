@@ -137,7 +137,7 @@ section img {
 }
 
 .timer {
-  background-image: url("/Timer.svg");
+  background-image: url("timer.svg");
   background-repeat: no-repeat;
   display: none;
 }

@@ -96,7 +96,7 @@ const CalculateDays = () => {
   }
 
   result.innerHTML = `<h3>You need to wait for ${userevent.value}: </h3>  Calendar days: ${Calresult} <br>  Week-ends free days: ${CalBusiness} <br> Finnish Business Days: ${CalHolBusiness} <br> <h3>Be patient! Good luck!</h3>  `;
-  form.reset();
+
   arrayGap = [];
   TimerFunction();
 };
@@ -191,5 +191,6 @@ const CalculateDays2 = () => {
   }
 
   result2.innerHTML = `<h3>You need to wait for ${userevent2.value}: </h3>  Calendar days: ${Calresult2} <br> Finnish Business Days: ${CalHolBusiness2} <br> <h3>Be patient! Good luck!</h3>  `;
+  arrayGap2 = [];
 };
 form2.addEventListener("submit", Stoprefresh, CalculateDays2);
