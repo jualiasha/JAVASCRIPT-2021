@@ -9,35 +9,38 @@ let stopbutton = document.getElementById("stop");
 let close = document.getElementById("close");
 let score = 0;
 let active = 0;
+let activecounter = 0;
+let timer;
 
-circles[0].onclick = function () {
-  clicked(0);
-};
-circles[1].onclick = function () {
-  clicked(1);
-};
-circles[2].onclick = function () {
-  clicked(2);
-};
-circles[3].onclick = function () {
-  clicked(3);
-};
+const ClickCircles = () => {
+  circles[0].onclick = function () {
+    clicked(0);
+  };
+  circles[1].onclick = function () {
+    clicked(1);
+  };
+  circles[2].onclick = function () {
+    clicked(2);
+  };
+  circles[3].onclick = function () {
+    clicked(3);
+  };
 
-const clicked = (i) => {
-  console.log("clicked:", i);
+  const clicked = (i) => {
+    console.log("clicked:", i);
 
-  if (active == i) {
-    score++;
-  } else {
-    endGame();
-    return score; //here i need to stop score counting
-  }
+    if (active == i) {
+      score++;
+    } else {
+      endGame();
+    }
 
-  if (score % 3 == 0) {
-    delay = delay - 100;
-  }
+    if (score % 3 == 0) {
+      delay = delay - 100;
+    }
 
-  scoredisplay.textContent = ` ${score}`;
+    scoredisplay.textContent = ` ${score}`;
+  };
 };
 
 function GetCircle(min, max) {
@@ -46,6 +49,42 @@ function GetCircle(min, max) {
 
 const startGame = () => {
   console.log("Game started");
+  startbutton.style.display = "none";
+  stopbutton.style.display = "block";
+
+  circles[0].onclick = function () {
+    clicked(0);
+  };
+  circles[1].onclick = function () {
+    clicked(1);
+  };
+  circles[2].onclick = function () {
+    clicked(2);
+  };
+  circles[3].onclick = function () {
+    clicked(3);
+  };
+  if (active >= 0) {
+    activecounter++;
+  }
+  if (activecounter > 3 && score == 0) {
+    return endGame();
+  }
+  const clicked = (i) => {
+    console.log("clicked:", i);
+
+    if (active == i) {
+      score++;
+    } else {
+      endGame();
+    }
+
+    if (score % 3 == 0) {
+      delay = delay - 50;
+    }
+
+    scoredisplay.textContent = ` ${score}`;
+  };
 
   let nextActive = pickNew(active);
 
@@ -68,12 +107,21 @@ const startGame = () => {
     }
   }
 };
+if (activecounter - score > 3) {
+  endGame();
+}
 
 const endGame = () => {
   clearTimeout(timer);
   console.log("Game over");
   overlay.style.display = "block";
-  gameover.textContent = `Your score is ${score}`;
+  if (score == 0) {
+    gameover.textContent = `Your score is ${score}, are you sleeping? Catch it!!`;
+  } else {
+    gameover.textContent = `Your score is ${score}. Good, but you can catch more!`;
+  }
+
+  active = 5;
 };
 
 const reloadGame = () => {
@@ -92,3 +140,4 @@ function Checkclick() {
 
 close.addEventListener("click", reloadGame);
 startbutton.addEventListener("click", startGame);
+stopbutton.addEventListener("click", endGame);

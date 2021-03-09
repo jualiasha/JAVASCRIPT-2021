@@ -17,6 +17,10 @@ main {
 h1 {
   font-size: 50px;
 }
+#stop {
+  display: none;
+  margin: 0 auto;
+}
 
 /*Circles*/
 #circles {
@@ -51,7 +55,7 @@ h1 {
   min-height: 200px;
   position: absolute;
   left: 3rem;
-  top: 18rem;
+  top: 19rem;
 }
 
 #popup > p {
@@ -60,6 +64,6 @@ h1 {
 
 #close {
   text-align: right;
-  font-size: 14px;
+  font-size: 20px;
   cursor: pointer;
 }
