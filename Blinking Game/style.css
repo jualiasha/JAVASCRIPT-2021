@@ -16,10 +16,23 @@ main {
 
 h1 {
   font-size: 50px;
+  color: rgb(17, 129, 129);
 }
 #stop {
   display: none;
   margin: 0 auto;
+}
+button {
+  padding: 1rem;
+  background-color: rgb(17, 129, 129);
+  color: white;
+  font-size: 20px;
+  font-family: "Raleway", sans-serif;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
 }
 
 /*Circles*/
@@ -28,8 +41,15 @@ h1 {
   justify-content: center;
   margin-bottom: 50px;
 }
-
 .circle {
+  height: 100px;
+  width: 100px;
+  background-color: #333;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 1rem;
+}
+.circle-game {
   height: 100px;
   width: 100px;
   background-color: azure;
@@ -39,12 +59,13 @@ h1 {
   border: 1px solid rgba(51, 51, 51, 0.274);
 }
 
-.circle:hover {
+.circle-game:hover {
   box-shadow: 1px 1px 8px #888888;
 }
 
 .active {
-  background-color: coral;
+  /*background-color: coral;*/
+  background-image: url("palm.png");
 }
 
 /*popup*/
@@ -58,7 +79,18 @@ h1 {
   top: 19rem;
 }
 
-#popup > p {
+#popup-level {
+  display: none;
+  background-color: rgb(255, 255, 255);
+  width: 80%;
+  min-height: 230px;
+  position: absolute;
+  left: 3rem;
+  top: 12rem;
+}
+
+#popup > p,
+#popup-level > p {
   margin: 0;
 }
 
