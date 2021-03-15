@@ -85,10 +85,10 @@ const startGame = () => {
 
     if (score % 7 == 0 && active == i) {
       level++;
+      levelsound.play();
       leveloverlay.style.display = "block";
       document.getElementById("level").textContent = level;
 
-      levelsound.play();
       document
         .getElementById("continue")
         .addEventListener("click", function () {
