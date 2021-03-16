@@ -12,7 +12,7 @@ async function GetWearher(event) {
   let json = await resp.json();
   weather = json;
   console.log(weather);
-  result.innerHTML = `<h3>temperature now:${weather.main.temp}</h3><h3>feels like:${weather.main.feels_like}</h3><h3>weather:${weather.weather[0].description}</h3>`;
+  result.innerHTML = `<h3>temperature now: ${weather.main.temp}</h3><h3>feels like: ${weather.main.feels_like}</h3><h3>weather: ${weather.weather[0].description}</h3>`;
 }
 
 button.addEventListener("click", GetWearher);
