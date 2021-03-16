@@ -1,0 +1,16 @@
+body {
+  background-image: linear-gradient(
+    rgba(76, 231, 115, 0.623),
+    rgba(238, 255, 2, 0.329)
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: brown;
+  display: flex;
+  justify-content: center;
+  font-family: "Raleway", sans-serif;
+}
+
+h3 {
+  color: chocolate;
+}
